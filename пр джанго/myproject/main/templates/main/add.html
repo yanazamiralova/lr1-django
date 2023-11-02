@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+Добавить сотрудника
+{% endblock %}
+
+{% block content %}
+    <div class="zalogo"><h1>Добавить сотрудника</h1></div>
+    <form method="post">
+        <h4>Новый сотрудник</h4>
+        <div class="form">
+        {% csrf_token %}
+        {{ form.ind }}<br>
+        {{ form.name }}<br>
+        {{ form.email }}<br>
+        {{ form.phone }}<br>
+        {{ form.program }}<br></div>
+      <button type="submit" class="btn btn-success" style="background-color: #FFF06A;">Сохранить</button>
+      <span>{{ error }}</span>
+
+    </form>
+{% endblock %}
